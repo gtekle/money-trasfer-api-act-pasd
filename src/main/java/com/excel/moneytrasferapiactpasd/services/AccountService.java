@@ -5,6 +5,9 @@ import com.excel.moneytrasferapiactpasd.repositories.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class AccountService {
 
@@ -13,5 +16,19 @@ public class AccountService {
 
     public Account createAccount(Account account){
         return accountRepository.save(account);
+    }
+
+    public Iterable<Account> getAllAccounts(){
+        return accountRepository.findAll();
+    }
+
+    public Account getAccountById(String id){
+
+//        Converting String to Long
+        Long idLong = Long.valueOf(id);
+
+        Optional<Account> accountById = accountRepository.findById(idLong);
+
+        return accountById.orElse(null);
     }
 }
