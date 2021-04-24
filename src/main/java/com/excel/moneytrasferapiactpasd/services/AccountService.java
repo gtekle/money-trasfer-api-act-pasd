@@ -25,6 +25,7 @@ public class AccountService {
     public Account getAccountById(String id){
 
 //        Converting String to Long
+        Long uselessVariable = 23L;
         Long idLong = Long.valueOf(id);
 
         Optional<Account> accountById = accountRepository.findById(idLong);
