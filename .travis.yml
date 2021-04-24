@@ -12,6 +12,6 @@ deploy:
   api_key: $HEROKU_API_KEY
   app: money-trasfer-api-act-pasd
   on:
-    repo: gtekle/money-trasfer-api-act-pasd
+    repo: money-trasfer-api-act-pasd
     branch: main
   skip_cleanup: 'true'
